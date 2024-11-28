@@ -65,7 +65,7 @@ ol {
 
 .content {
   display:flex;
-  width: 1140px;
+  inline-size: 1140px;
   gap: 30px;
   align-items: end; 
   margin: auto;
@@ -79,20 +79,28 @@ ol {
   position: relative; 
   height: 298px;
   overflow: auto;
-  scrollbar-width: none;
+}
+
+.content__list::-webkit-scrollbar {
+  width: 7px;
+  border-radius: 10px;
+  background-color:#545050;
+}
+
+.content__list::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #fff9;
+}
+
+.content__list::-webkit-scrollbar-track {
+  -webkit-box-shadow: 3px 3px 3px -3px #000 inset;
 }
 
 .content__list-item:not(:last-child) {
   margin-bottom: 30px;
 }
 
-.content__:hover {
-  text-decoration: underline;
-  text-underline-offset: 2.5px;
-  text-decoration-skip-ink: none;
-}
-
-.content__list-item:active {
+.content__list-link:active {
   background-color: #545050;
 }
 
@@ -124,12 +132,16 @@ ol {
 }
 
 .content__video-card-title{
+  max-width: 200px;
   font-family: Oswald, Arial, sans-serif;
   text-transform: uppercase;
   font-size: 30px;
   font-weight: bold;
   line-height: 100%;
   padding-bottom: 6px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .content__video-card-description {
@@ -191,8 +203,8 @@ ol {
 }
 
 .search-form__textfield { 
-width: 225px;
-height: 27px;
+min-width: 225px;
+min-height: 27px;
 font-family: inherit;
 font-size: inherit;
 color: inherit;
@@ -251,6 +263,7 @@ border-bottom: solid 1px #fff;
 }
 
 .button {
+  height: 34px;
   font-family: Fira Sans Condensed, Arial, sans-serif;
   font-size: 18px;
   font-weight: bold;
@@ -279,13 +292,11 @@ border-bottom: solid 1px #fff;
 
 .search-form__submit-button {
   align-self: flex-end;
-  width: 194px;
-  height: 34px;
+  min-width: 194px;
 }
 
 .more-button {
-  width: 399px;
-  height: 34px;
+  min-width: 399px;
 }
 
 
