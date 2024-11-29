@@ -100,10 +100,6 @@ ol {
   margin-bottom: 30px;
 }
 
-.content__list-link:active {
-  background-color: #545050;
-}
-
 .content__video-card {
   display: flex;
   align-items: start;
@@ -120,6 +116,10 @@ ol {
   text-decoration: underline;
   text-underline-offset: 2.5px;
   text-decoration-skip-ink: none;
+}
+
+.content__card-link:active {
+  background-color: #545050;
 }
 
 .content__card-link:focus {
@@ -263,7 +263,7 @@ border-bottom: solid 1px #fff;
 }
 
 .button {
-  height: 34px;
+  min-height: 34px;
   font-family: Fira Sans Condensed, Arial, sans-serif;
   font-size: 18px;
   font-weight: bold;
